@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ModalCampaignComponent } from './../../Components/modal-campaign/modal-campaign.component';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,19 @@ export class HomePage implements OnInit {
   }
 
   async openModalCampaign() {
+    const modal = await this.modalController.create({
+      component: ModalCampaignComponent,
+      componentProps: {
+        data: {
+          type: 'campaign',
+          data: {
 
+          },
+        }
+      }
+    });
+    await modal.present();
+    await modal.onWillDismiss();
   }
 
 
