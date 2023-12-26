@@ -1,3 +1,5 @@
+<app-spinner [showSpinner]="showSpinner"></app-spinner>
+
 <ion-content [fullscreen]="true">
 
   <div class="login-screen">
@@ -8,7 +10,7 @@
     <div class="form">
       <ion-card id="email">
         <ion-label>E-mail</ion-label>
-        <ion-input [formControl]="email" type="text" inputmode="email"></ion-input>
+        <ion-input [formControl]="email" inputmode="email"></ion-input>
       </ion-card>
       <ion-label *ngIf="email.touched && email.invalid" class="ion-padding-horizontal" color="danger">Campo
         inválido.</ion-label>
